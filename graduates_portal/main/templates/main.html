@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+<title>Diploma project</title>
+<link rel="stylesheet"   href="{% static 'style.css' %}"  type="text/css" media="all" />
+<style>
+</style>
+</head>
+<body>
+
+
+<div id="menu_div">
+
+<div id="logo home"></div>
+
+<div id="navigation bar"><ul>
+  <span><a href="#home">Home</a></span>
+  <span><a href="#contact">Resume</a></span>
+  <span><a href="#about">Applications</a></span>
+  <span><a href="#about">Selected vacancies</a></span>
+  
+<input id="inpuT" type="text" name="search" value="diplomka">
+<input id="inpuTT" type="submit" value="Поиск">
+
+<div class="req" style="position:right;">
+    <span><a href="{% url 'login'%}">login</a></span>
+</div>
+<div class="req" style="position:right;">
+    <span><a href="{% url 'logout'%}">logout</a></span>
+</div>
+</ul>
+</div>
+
+<div id="reg button"></div>
+
+
+</div>
+</body>
+</html>

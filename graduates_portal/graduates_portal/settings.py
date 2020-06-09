@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'main',
+    'accounts',
+    'crispy_forms']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,5 +118,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, 'main/static'),
+     os.path.join(BASE_DIR, 'accounts/static'),
+)
+
+AUTH_USER_MODEL = 'accounts.User'
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'main/static')
+SENDGRID_API_KEY = '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'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'Yedige'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# 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

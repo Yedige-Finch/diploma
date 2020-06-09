@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="stylesheet"   href="{% static 'accounts/style.css' %}"  type="text/css" media="all" />
+<style>
+</style>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<form action="{% url 'login' %}" method="post">
+ {% csrf_token %}
+
+   <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+        
+    <button type="submit">Login</button>
+  
+  <div class="regs"> 
+  <h5 style="background-color: red; color: white; padding:8px 0px; margin:8px 0px; border:none; cursor:pointer; width:100%; text-align:center;">Register</h5>
+  <div class="cont">
+  <a type="submit" class="select_button" href="{% url 'registration_student' %}">Students</a>
+  <a type="submit" class="select_button" href="{% url 'registration_employer' %}">Employer</a>
+  </div>
+  </div>
+    
+  <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn"><a href="diploma_index.html" style="color:white;">Cancel</a></button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+<h2>{{ text }}</h2>
+</body>
+</html>

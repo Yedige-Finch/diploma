@@ -1,0 +1,17 @@
+
+#menu_div {
+display: block;
+background-color: rgba(28, 30, 32, .85);
+margin:10px;
+padding:10px;
+}
+
+
+a {
+
+color: #fff;
+height: 60px;
+padding: 0 28px
+
+
+}
