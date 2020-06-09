@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+{% load crispy_forms_tags %}
+<link rel="stylesheet"   href="{% static 'accounts/style.css' %}"  type="text/css" media="all" />
+</head>
+<body>
+<h2>Student registration form</h2>
+<form method="POST" action="{% url 'registration_student' %}">
+      {% csrf_token %}
+      {{form|crispy}}
+      {{profile|crispy}}
+      <button type="submit">Register me</button>
+</form>
+
+</body>
+</html>
